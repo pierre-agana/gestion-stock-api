@@ -25,8 +25,8 @@ public class Category extends AbstractEntity{
     @Column(name = "designation")
     private String designation;
 
-    @Column(name = "idCompanies")
-    private Integer idCompanies;
+    @Column(name = "idEntreprise")
+    private Integer idEntreprise;
 
     @OneToMany(mappedBy = "category")
     private List<Article> articles;

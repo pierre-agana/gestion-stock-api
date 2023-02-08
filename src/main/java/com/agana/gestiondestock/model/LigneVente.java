@@ -1,11 +1,13 @@
 package com.agana.gestiondestock.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
+import java.time.Instant;
 
 @Data
 @NoArgsConstructor
@@ -14,4 +16,17 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @Table(name = "lignevente")
 public class LigneVente extends AbstractEntity{
+
+    @ManyToOne
+    @JoinColumn(name = "idvente")
+    private Ventes ventes;
+
+    @Column(name = "prixunitaire")
+    private BigDecimal prixUnitaire;
+
+    @Column(name = "quantity")
+    private BigDecimal quantity;
+
+    @Column(name = "idEntreprise")
+    private Integer idEntreprise;
 }
