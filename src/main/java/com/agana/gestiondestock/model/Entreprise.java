@@ -1,11 +1,12 @@
 package com.agana.gestiondestock.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -15,5 +16,30 @@ import lombok.NoArgsConstructor;
 @Table(name = "entreprise")
 public class Entreprise extends AbstractEntity{
 
-    private  String nom ;
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "description")
+    private String description;
+
+    @Embedded
+    private Adresse adresse;
+
+    @Column(name = "taxcode")
+    private String taxCode;
+
+    @Column(name = "logo")
+    private String logo;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "phone")
+    private String phone;
+
+    @Column(name = "website")
+    private String webSite;
+
+    @OneToMany(mappedBy = "entreprise")
+    private List<Utilisateur> utilisateurs;
 }

@@ -2,16 +2,18 @@
   spring:
     datasource:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/gestiondestock?createDatabaseIfNotExist=true&userSSL=true&useUnicode=true&allowPublicKeyRetrieval=true&useSSL=false
+      url: jdbc:mysql://localhost:8889/gestiondestock?createDatabaseIfNotExist=true&userSSL=true&useUnicode=true&allowPublicKeyRetrieval=true&useSSL=false
       username: root
-      password:
+      password: root
+
     ## Specify DBMS
     jpa:
       database: MYSQL
       show-sql: false
+
       # Hibernate DDL Auto (create, create-drop, update)
       hibernate:
         ddl-auto: update
       properties:
         hibernate:
-          dialect: org.hibernate.dialect.MySQL5Dialect
+          dialect: org.hibernate.dialect.MySQLDialect
