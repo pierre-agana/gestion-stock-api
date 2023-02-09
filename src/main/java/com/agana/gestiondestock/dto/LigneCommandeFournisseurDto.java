@@ -1,11 +1,5 @@
 package com.agana.gestiondestock.dto;
-
-import com.agana.gestiondestock.model.Article;
-import com.agana.gestiondestock.model.CommandeFournisseur;
 import com.agana.gestiondestock.model.LigneCommandeFournisseur;
-import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.Builder;
 import lombok.Data;
 

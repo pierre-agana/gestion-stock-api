@@ -16,7 +16,7 @@ public class FournisseurDto {
 
     private Integer idEntreprise;
 
-    private AdresseDto adress;
+    private AdresseDto adresse;
 
     private String picture;
 
