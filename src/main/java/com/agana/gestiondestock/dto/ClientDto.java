@@ -31,7 +31,7 @@ public class ClientDto {
     private List<CommandeClientDto> commandeClients;
 
     //mapping de Client -> ClientDto
-    public  ClientDto fromEntity(Client client) {
+    public static ClientDto fromEntity(Client client) {
         if (client == null){
             return null;
 
@@ -49,7 +49,7 @@ public class ClientDto {
     }
 
     //mapping de ClientDto -> Client
-    public Client toEntity(ClientDto clientDto) {
+    public static Client toEntity(ClientDto clientDto) {
         if (clientDto == null){
             return null;
 

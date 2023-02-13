@@ -25,7 +25,7 @@ public class CategoryDto {
     private List<ArticleDto> articles;
 
     //mapping de Category -> CategoryDto
-    public CategoryDto fromEntity(Category category) {
+    public static CategoryDto fromEntity(Category category) {
         if (category == null){
             return null;
 
@@ -40,7 +40,7 @@ public class CategoryDto {
     }
 
     //mapping de CategoryDto -> Category
-    public Category toEntity(CategoryDto categoryDto) {
+    public static  Category toEntity(CategoryDto categoryDto) {
         if (categoryDto == null){
             return null;
 
