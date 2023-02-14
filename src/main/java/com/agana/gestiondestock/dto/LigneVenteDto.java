@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 public class LigneVenteDto {
     private Integer id;
     private VentesDto ventes;
-
+    private ArticleDto article;
     private BigDecimal prixUnitaire;
 
     private BigDecimal quantity;
@@ -32,6 +32,7 @@ public class LigneVenteDto {
                 .id(ligneVente.getId())
                 .prixUnitaire(ligneVente.getPrixUnitaire())
                 .quantity(ligneVente.getQuantity())
+                .idEntreprise(ligneVente.getIdEntreprise())
                 .build();
     }
 
@@ -45,6 +46,8 @@ public class LigneVenteDto {
         ligneVente.setId(ligneVenteDto.getId());
         ligneVente.setPrixUnitaire(ligneVenteDto.getPrixUnitaire());
         ligneVente.setQuantity(ligneVenteDto.getQuantity());
+        ligneVente.setIdEntreprise(ligneVenteDto.getIdEntreprise());
+        ligneVente.setIdEntreprise(ligneVenteDto.getIdEntreprise());
         return ligneVente;
     }
 }

@@ -2,7 +2,6 @@ package com.agana.gestiondestock.dto;
 
 import com.agana.gestiondestock.model.Client;
 import com.agana.gestiondestock.model.CommandeClient;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Data;
 
@@ -14,19 +13,15 @@ import java.util.List;
 public class CommandeClientDto {
 
     private Integer id;
-
     private String code;
-
     private Instant dateCommande;
-
     private Integer idEntreprise;
-
     private Client client;
 
-    @JsonIgnore
+
     private List<LigneCommandeClientDto> ligneCommandeClients;
 
-    public CommandeClientDto fromEntity(CommandeClient commandeClient) {
+    public static CommandeClientDto fromEntity(CommandeClient commandeClient) {
         if (commandeClient == null){
             return null;
 
@@ -36,11 +31,12 @@ public class CommandeClientDto {
                 .id(commandeClient.getId())
                 .code(commandeClient.getCode())
                 .dateCommande(commandeClient.getDateCommande())
+                .idEntreprise(commandeClient.getIdEntreprise())
                 .client(commandeClient.getClient())
                 .build();
     }
 
-    public CommandeClient toEntity(CommandeClientDto commandeClientDto) {
+    public static CommandeClient toEntity(CommandeClientDto commandeClientDto) {
         if (commandeClientDto == null){
             return null;
 
@@ -51,6 +47,7 @@ public class CommandeClientDto {
         commandeClient.setId(commandeClientDto.getId());
         commandeClient.setCode(commandeClientDto.getCode());
         commandeClient.setDateCommande(commandeClientDto.getDateCommande());
+        commandeClient.setIdEntreprise(commandeClientDto.getIdEntreprise());
         commandeClient.setClient(commandeClientDto.getClient());
 
         return commandeClient;

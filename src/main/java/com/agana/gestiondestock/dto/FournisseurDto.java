@@ -37,6 +37,7 @@ public class FournisseurDto {
                 .id(fournisseur.getId())
                 .firstName(fournisseur.getFirstName())
                 .lastName(fournisseur.getLastName())
+                .idEntreprise(fournisseur.getIdEntreprise())
                 .picture(fournisseur.getPicture())
                 .email(fournisseur.getEmail())
                 .phone(fournisseur.getPhone())
@@ -53,6 +54,7 @@ public class FournisseurDto {
         fournisseur.setId(fournisseurDto.getId());
         fournisseur.setFirstName(fournisseurDto.getFirstName());
         fournisseur.setLastName(fournisseurDto.getLastName());
+        fournisseur.setIdEntreprise(fournisseurDto.getIdEntreprise());
         fournisseur.setPicture(fournisseurDto.getPicture());
         fournisseur.setEmail(fournisseurDto.getEmail());
         fournisseur.setPhone(fournisseurDto.getPhone());

@@ -27,7 +27,7 @@ public class MvtStkDto {
 
     private Integer idEntreprise;
 
-    public MvtStkDto formEntity(MvtStk mvtStk) {
+    public static MvtStkDto fromEntity(MvtStk mvtStk) {
         if (mvtStk == null){
             return null;
 
@@ -38,10 +38,11 @@ public class MvtStkDto {
                 .dateMvt(mvtStk.getDateMvt())
                 .quantity(mvtStk.getQuantity())
                 .typeMvt(mvtStk.getTypeMvt())
+                .idEntreprise(mvtStk.getIdEntreprise())
                 .build();
     }
 
-    public MvtStk toEntity(MvtStkDto mvtStkDto) {
+    public static MvtStk toEntity(MvtStkDto mvtStkDto) {
         if (mvtStkDto == null){
             return null;
 
@@ -53,6 +54,7 @@ public class MvtStkDto {
         mvtStk.setDateMvt(mvtStkDto.getDateMvt());
         mvtStk.setQuantity(mvtStkDto.getQuantity());
         mvtStk.setTypeMvt(mvtStkDto.getTypeMvt());
+        mvtStk.setIdEntreprise(mvtStkDto.getIdEntreprise());
         return mvtStk;
     }
 }

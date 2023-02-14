@@ -23,6 +23,8 @@ public class CommandeFournisseur extends AbstractEntity{
     @ManyToOne
     @JoinColumn(name = "idFournisseur")
     private  Fournisseur fournisseur;
+    @Column(name = "idEntreprise")
+    private Integer idEntreprise;
 
     @OneToMany(mappedBy = "commandeFournisseur")
     private List<LigneCommandeFournisseur> ligneCommandeFournisseurs;

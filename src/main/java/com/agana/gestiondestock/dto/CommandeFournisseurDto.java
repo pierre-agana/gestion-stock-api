@@ -1,8 +1,8 @@
 package com.agana.gestiondestock.dto;
 
 import com.agana.gestiondestock.model.CommandeFournisseur;
+import com.agana.gestiondestock.model.Entreprise;
 import com.agana.gestiondestock.model.Fournisseur;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Data;
 
@@ -18,11 +18,10 @@ public class CommandeFournisseurDto {
     private Instant dateCommande;
 
     private Fournisseur fournisseur;
-
-    @JsonIgnore
+private Integer  idEntreprise;
     private List<LigneCommandeFournisseurDto> ligneCommandeFournisseurs;
 
-    public CommandeFournisseurDto fromEntity(CommandeFournisseur commandeFournisseur) {
+    public static CommandeFournisseurDto fromEntity(CommandeFournisseur commandeFournisseur) {
         if (commandeFournisseur == null){
             return null;
 
@@ -33,11 +32,12 @@ public class CommandeFournisseurDto {
                 .id(commandeFournisseur.getId())
                 .code(commandeFournisseur.getCode())
                 .dateCommande(commandeFournisseur.getDateCommande())
+                .idEntreprise(commandeFournisseur.getIdEntreprise())
                 .fournisseur(commandeFournisseur.getFournisseur())
                 .build();
     }
 
-    public CommandeFournisseur toEntity(CommandeFournisseurDto commandeFournisseurDto) {
+    public static CommandeFournisseur toEntity(CommandeFournisseurDto commandeFournisseurDto) {
         if (commandeFournisseurDto == null){
             return null;
 
@@ -48,6 +48,7 @@ public class CommandeFournisseurDto {
         commandeFournisseur.setId(commandeFournisseurDto.getId());
         commandeFournisseur.setCode(commandeFournisseurDto.getCode());
         commandeFournisseur.setDateCommande(commandeFournisseurDto.getDateCommande());
+        commandeFournisseur.setIdEntreprise(commandeFournisseurDto.getIdEntreprise());
         commandeFournisseur.setFournisseur(commandeFournisseurDto.getFournisseur());
 
         return commandeFournisseur;

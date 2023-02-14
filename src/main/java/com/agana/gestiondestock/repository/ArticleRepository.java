@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface ArticleRepository extends JpaRepository<Article, Integer> {
 
     // creer un  methode
-    //creqtion de lq methode find by codeArticle
+    //creqtion de la methode find by codeArticle
     Optional<Article> findArticleByCodeArticle(String codeArticle);
 
 }

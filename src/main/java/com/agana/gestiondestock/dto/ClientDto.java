@@ -41,6 +41,7 @@ public class ClientDto {
                 .id(client.getId())
                 .firstName(client.getFirstName())
                 .lastName(client.getLastName())
+                .idEntreprise(client.getIdEntreprise())
                 .adress(client.getAdress())
                 .picture(client.getPicture())
                 .email(client.getEmail())
@@ -61,6 +62,7 @@ public class ClientDto {
         client.setId(clientDto.getId());
         client.setFirstName(clientDto.getFirstName());
         client.setLastName(clientDto.getLastName());
+        client.setIdEntreprise(clientDto.getIdEntreprise());
         client.setAdress(clientDto.getAdress());
         client.setPicture(clientDto.getPicture());
         client.setEmail(clientDto.getEmail());

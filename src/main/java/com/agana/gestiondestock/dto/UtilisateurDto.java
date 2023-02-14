@@ -35,7 +35,7 @@ public class UtilisateurDto {
     @JsonIgnore
     private List<RolesDto> roles;
 
-    public UtilisateurDto fromEntity(Utilisateur utilisateur) {
+    public static UtilisateurDto fromEntity(Utilisateur utilisateur) {
         if (utilisateur == null){
             return null;
 
@@ -49,10 +49,11 @@ public class UtilisateurDto {
                 .dateBirth(utilisateur.getDateBirth())
                 .email(utilisateur.getEmail())
                 .password(utilisateur.getPassword())
+                .entreprise(EntrepriseDto.fromEntity(utilisateur.getEntreprise()))
                 .build();
     }
 
-    public Utilisateur toEntity(UtilisateurDto utilisateurDto) {
+    public static Utilisateur toEntity(UtilisateurDto utilisateurDto) {
         if (utilisateurDto == null){
             return null;
 
@@ -66,6 +67,7 @@ public class UtilisateurDto {
         utilisateur.setDateBirth(utilisateurDto.getDateBirth());
         utilisateur.setEmail(utilisateurDto.getEmail());
         utilisateur.setPassword(utilisateurDto.getPassword());
+        utilisateur.setEntreprise(EntrepriseDto.toEntity(utilisateurDto.getEntreprise()));
         return utilisateur;
     }
 }

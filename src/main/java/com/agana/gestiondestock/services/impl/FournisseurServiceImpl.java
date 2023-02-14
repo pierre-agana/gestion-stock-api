@@ -9,6 +9,7 @@ import com.agana.gestiondestock.repository.FournisseurRepository;
 import com.agana.gestiondestock.services.FournisseurService;
 import com.agana.gestiondestock.validator.FournisseurValidator;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +21,7 @@ import java.util.stream.Collectors;
 public class FournisseurServiceImpl implements FournisseurService {
     private FournisseurRepository fournisseurRepository;
 
+    @Autowired
     public FournisseurServiceImpl(FournisseurRepository fournisseurRepository) {this.fournisseurRepository = fournisseurRepository;}
     @Override
     public FournisseurDto save(FournisseurDto fournisseurDto) {

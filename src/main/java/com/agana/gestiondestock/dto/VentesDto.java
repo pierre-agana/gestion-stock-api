@@ -1,11 +1,11 @@
 package com.agana.gestiondestock.dto;
 
 import com.agana.gestiondestock.model.Ventes;
-import jakarta.persistence.Column;
 import lombok.Builder;
 import lombok.Data;
 
 import java.time.Instant;
+import java.util.List;
 
 @Builder
 @Data
@@ -16,10 +16,10 @@ public class VentesDto {
     private Instant dateventes;
 
     private String remark;
-
+    private List<LigneVenteDto> ligneVentes;
     private Integer idEntreprise;
 
-    public VentesDto fromEntity(Ventes ventes) {
+    public static VentesDto fromEntity(Ventes ventes) {
         if (ventes == null){
             return null;
 
@@ -34,7 +34,7 @@ public class VentesDto {
                 .build();
     }
 
-    public Ventes toEntity(VentesDto ventesDto) {
+    public static Ventes toEntity(VentesDto ventesDto) {
         if (ventesDto == null){
             return null;
 

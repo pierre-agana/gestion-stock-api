@@ -46,6 +46,7 @@ public class ArticleDto {
                 .tauxTva(article.getTauxTva())
                 .prixUnitaireTtc(article.getPrixUnitaireTtc())
                 .picture(article.getPicture())
+                .idEntreprise(article.getIdEntreprise())
                 .build();
     }
 
@@ -66,6 +67,7 @@ public class ArticleDto {
         article.setTauxTva(articleDto.getTauxTva());
         article.setPrixUnitaireTtc(articleDto.getPrixUnitaireTtc());
         article.setPicture(articleDto.getPicture());
+        article.setIdEntreprise(articleDto.getIdEntreprise());
 
         return article;
 
